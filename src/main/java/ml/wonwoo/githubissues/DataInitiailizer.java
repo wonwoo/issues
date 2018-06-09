@@ -22,10 +22,8 @@ public class DataInitiailizer implements SmartInitializingSingleton {
     this.githubProjectRepository.deleteAll();
     this.githubProjectRepository.saveAll(Arrays.asList(
         new GithubProject("wonwoo", "dynamodb-spring-boot"),
-//        new GithubProject("codecentric","chaos-monkey-spring-boot"),
-//        new GithubProject("mybatis","spring-boot-starter"),
-//        new GithubProject("spring-projects","spring-boot"),
-        new GithubProject("codecentric","spring-boot-admin")
+        new GithubProject("mybatis","spring-boot-starter"),
+        new GithubProject("spring-projects","spring-boot")
     ));
   }
 }
