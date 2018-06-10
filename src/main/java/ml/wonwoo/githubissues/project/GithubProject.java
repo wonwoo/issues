@@ -26,6 +26,11 @@ public class GithubProject {
     return id;
   }
 
+  /* for test */
+  public void setId(String id) {
+    this.id = id;
+  }
+
   public String getOrgName() {
     return orgName;
   }
