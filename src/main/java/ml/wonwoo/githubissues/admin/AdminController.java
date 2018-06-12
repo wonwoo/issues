@@ -28,7 +28,7 @@ public class AdminController {
   }
 
   @DeleteMapping("/admin/{id}")
-  public String deleteGithubProject(@PathVariable String id) {
+  public String deleteGithubProject(@PathVariable Long id) {
     this.repository.deleteById(id);
     return "redirect:/";
   }

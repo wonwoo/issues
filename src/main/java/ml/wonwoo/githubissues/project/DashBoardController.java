@@ -23,7 +23,7 @@ public class DashBoardController {
 
   @GetMapping("/")
   public String dashBoard(Model model) {
-    List<DashboardEntry> dashboardEntries = this.repository.findAll()
+    var dashboardEntries = this.repository.findAll()
         .stream()
         .map(githubProject -> new DashboardEntry(githubProject,
             githubClient.cacheFetchEvents(githubProject.getOrgName(), githubProject.getRepoName())))

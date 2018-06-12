@@ -34,9 +34,9 @@ public class AdminControllerTests {
   @Test
   public void adminFormTest() throws Exception {
     GithubProject githubProject = new GithubProject("wonwoo", "dynamodb-spring-boot");
-    githubProject.setId("test1");
+    githubProject.setId(1L);
     GithubProject githubProject1 = new GithubProject("spring", "spring-boot");
-    githubProject1.setId("test2");
+    githubProject1.setId(2L);
     given(repository.findAll())
         .willReturn(Arrays.asList(githubProject, githubProject1));
 

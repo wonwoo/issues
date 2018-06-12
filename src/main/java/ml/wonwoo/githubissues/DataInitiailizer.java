@@ -5,7 +5,7 @@ import ml.wonwoo.githubissues.project.GithubProjectRepository;
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class DataInitiailizer implements SmartInitializingSingleton {
@@ -16,14 +16,13 @@ public class DataInitiailizer implements SmartInitializingSingleton {
     this.githubProjectRepository = githubProjectRepository;
   }
 
-
   @Override
   public void afterSingletonsInstantiated() {
     this.githubProjectRepository.deleteAll();
-    this.githubProjectRepository.saveAll(Arrays.asList(
+    this.githubProjectRepository.saveAll(List.of(
         new GithubProject("wonwoo", "dynamodb-spring-boot"),
-        new GithubProject("mybatis","spring-boot-starter"),
-        new GithubProject("spring-projects","spring-boot")
+        new GithubProject("mybatis", "spring-boot-starter"),
+        new GithubProject("spring-projects", "spring-boot")
     ));
   }
 }
